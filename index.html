@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#06140f">
 <title>Creator Growth Academy</title>
 
@@ -15,7 +15,6 @@
   --light:#83ffc0;
   --text:#f2fff7;
   --muted:#9bb5a6;
-  --danger:#ff6262;
   --border:rgba(131,255,192,.15);
 }
 
@@ -28,13 +27,8 @@ body{
   font-family:Arial,sans-serif;
 }
 
-button,input,textarea,select{
-  font:inherit;
-}
-
-button{
-  cursor:pointer;
-}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer}
 
 header{
   position:sticky;
@@ -43,6 +37,7 @@ header{
   display:flex;
   align-items:center;
   justify-content:space-between;
+  gap:10px;
   padding:14px 5%;
   background:#081a12;
   border-bottom:1px solid var(--border);
@@ -56,32 +51,21 @@ header{
 }
 
 .brand-icon{
-  width:45px;
-  height:45px;
+  width:48px;
+  height:48px;
   border-radius:14px;
   display:grid;
   place-items:center;
   background:linear-gradient(135deg,#16a66a,#83ffc0);
   color:#06140f;
-  font-size:25px;
+  font-size:27px;
   font-weight:900;
 }
 
-.brand h2{
-  margin:0;
-  font-size:17px;
-}
+.brand h2{margin:0;font-size:17px}
+.brand small{color:var(--muted);font-size:10px;letter-spacing:2px}
 
-.brand small{
-  color:var(--muted);
-  font-size:10px;
-  letter-spacing:2px;
-}
-
-.container{
-  width:min(1100px,92%);
-  margin:auto;
-}
+.container{width:min(1100px,92%);margin:auto}
 
 .hero{
   padding:65px 10px 45px;
@@ -104,9 +88,7 @@ header{
   margin:22px 0 15px;
 }
 
-.hero h1 span{
-  color:var(--light);
-}
+.hero h1 span{color:var(--light)}
 
 .hero p{
   color:var(--muted);
@@ -115,10 +97,7 @@ header{
   line-height:1.7;
 }
 
-.section-title{
-  margin:35px 0 18px;
-  font-size:23px;
-}
+.section-title{margin:35px 0 18px;font-size:23px}
 
 .platforms{
   display:grid;
@@ -133,6 +112,7 @@ header{
   padding:25px 15px;
   text-align:center;
   transition:.2s;
+  cursor:pointer;
 }
 
 .platform:hover{
@@ -140,20 +120,8 @@ header{
   border-color:var(--green);
 }
 
-.platform svg{
-  width:48px;
-  height:48px;
-  margin-bottom:12px;
-}
-
-.platform h3{
-  margin:5px 0;
-}
-
-.platform p{
-  color:var(--muted);
-  font-size:13px;
-}
+.platform svg{width:48px;height:48px;margin-bottom:12px}
+.platform p{color:var(--muted);font-size:13px}
 
 .btn{
   border:0;
@@ -164,9 +132,7 @@ header{
   font-weight:bold;
 }
 
-.btn:hover{
-  filter:brightness(1.1);
-}
+.btn:hover{filter:brightness(1.1)}
 
 .btn-outline{
   background:transparent;
@@ -174,13 +140,8 @@ header{
   color:var(--light);
 }
 
-.btn-danger{
-  background:#a52d2d;
-}
-
-.btn-muted{
-  background:#30483b;
-}
+.btn-danger{background:#a52d2d}
+.btn-muted{background:#30483b}
 
 .actions{
   display:flex;
@@ -200,21 +161,15 @@ header{
   border:1px solid var(--border);
   border-radius:16px;
   padding:20px;
+  margin:12px 0;
 }
 
-.card h3{
-  margin-top:0;
-}
-
-.card p{
-  color:var(--muted);
-  line-height:1.5;
-  font-size:14px;
-}
+.card h3{margin-top:0}
+.card p{color:var(--muted);line-height:1.5;font-size:14px}
 
 .price{
   color:var(--light);
-  font-size:22px;
+  font-size:23px;
   font-weight:bold;
   margin:15px 0;
 }
@@ -248,15 +203,8 @@ input,textarea,select{
   margin:7px 0 15px;
 }
 
-textarea{
-  min-height:100px;
-  resize:vertical;
-}
-
-label{
-  font-size:13px;
-  color:var(--light);
-}
+textarea{min-height:100px;resize:vertical}
+label{font-size:13px;color:var(--light)}
 
 .form-box{
   background:var(--panel);
@@ -267,9 +215,7 @@ label{
   margin:25px auto;
 }
 
-.hidden{
-  display:none!important;
-}
+.hidden{display:none!important}
 
 .modal{
   position:fixed;
@@ -283,9 +229,7 @@ label{
   overflow:auto;
 }
 
-.modal.active{
-  display:flex;
-}
+.modal.active{display:flex}
 
 .modal-box{
   width:min(600px,100%);
@@ -313,8 +257,8 @@ label{
 
 .qr{
   display:block;
-  width:min(230px,100%);
-  margin:15px auto;
+  width:min(270px,100%);
+  margin:18px auto;
   border-radius:12px;
   background:white;
   padding:8px;
@@ -328,6 +272,7 @@ label{
   color:var(--light);
   font-size:13px;
   line-height:1.6;
+  margin:12px 0;
 }
 
 .status{
@@ -338,20 +283,10 @@ label{
   background:#334638;
 }
 
-.status.Approved{
-  background:#145a37;
-  color:#a9ffd0;
-}
-
-.status.Rejected{
-  background:#632727;
-  color:#ffd0d0;
-}
-
-.status.Pending{
-  background:#5a4818;
-  color:#ffe5a1;
-}
+.status.Approved{background:#145a37;color:#a9ffd0}
+.status.Rejected{background:#632727;color:#ffd0d0}
+.status.Pending{background:#5a4818;color:#ffe5a1}
+.status.PriceSet{background:#164a64;color:#c4ecff}
 
 .admin-section{
   border-top:1px solid var(--border);
@@ -369,14 +304,8 @@ footer{
   line-height:1.8;
 }
 
-a{
-  color:var(--light);
-}
-
-.small{
-  color:var(--muted);
-  font-size:12px;
-}
+a{color:var(--light)}
+.small{color:var(--muted);font-size:12px}
 
 @media(max-width:500px){
   header{padding:12px 4%}
@@ -418,13 +347,8 @@ a{
   </p>
 
   <div class="actions" style="justify-content:center">
-    <button class="btn" onclick="scrollToCourses()">
-      Explore Courses
-    </button>
-
-    <button class="btn btn-outline" onclick="openCustom()">
-      Custom PDF Request
-    </button>
+    <button class="btn" onclick="scrollToCourses()">Explore Courses</button>
+    <button class="btn btn-outline" onclick="openCustom()">Custom PDF Request</button>
   </div>
 </section>
 
@@ -433,7 +357,7 @@ a{
 <section class="platforms">
 
   <div class="platform" onclick="showCourses('youtube')">
-    <svg viewBox="0 0 64 64" aria-label="YouTube">
+    <svg viewBox="0 0 64 64">
       <rect x="4" y="12" width="56" height="40" rx="12" fill="#ff0033"/>
       <path d="M27 23 L43 32 L27 41 Z" fill="white"/>
     </svg>
@@ -443,7 +367,7 @@ a{
   </div>
 
   <div class="platform" onclick="showCourses('instagram')">
-    <svg viewBox="0 0 64 64" aria-label="Instagram">
+    <svg viewBox="0 0 64 64">
       <defs>
         <linearGradient id="ig" x1="0" y1="1" x2="1" y2="0">
           <stop stop-color="#ffb000"/>
@@ -462,7 +386,7 @@ a{
   </div>
 
   <div class="platform" onclick="showCourses('facebook')">
-    <svg viewBox="0 0 64 64" aria-label="Facebook">
+    <svg viewBox="0 0 64 64">
       <circle cx="32" cy="32" r="29" fill="#1877f2"/>
       <path d="M36 55V35h8l1-9h-9v-5c0-3 1-5 5-5h5V8c-2 0-5-1-8-1-9 0-14 5-14 14v5h-8v9h8v20z" fill="white"/>
     </svg>
@@ -476,9 +400,7 @@ a{
 <section id="coursesSection">
   <div class="toolbar">
     <h2 class="section-title" id="courseHeading">Popular Courses</h2>
-    <button class="btn btn-outline hidden" id="backButton" onclick="showAllCourses()">
-      Back
-    </button>
+    <button class="btn btn-outline hidden" id="backButton" onclick="showAllCourses()">Back</button>
   </div>
 
   <div class="card-grid" id="courseGrid"></div>
@@ -504,16 +426,18 @@ a{
 <footer>
   <b>Creator Growth Academy</b><br>
   Learn • Create • Grow<br><br>
+
   <a href="https://www.instagram.com/online_solution12/"
      target="_blank" rel="noopener">
      Help Center – Instagram
   </a>
+
   <br><br>
   © 2026 Creator Growth Academy
 </footer>
 
 
-<!-- LOGIN MODAL -->
+<!-- ADMIN LOGIN -->
 
 <div class="modal" id="loginModal">
   <div class="modal-box">
@@ -522,17 +446,15 @@ a{
       <button class="close" onclick="closeModal('loginModal')">×</button>
     </div>
 
-    <p class="small">Enter your administrator PIN.</p>
-
-    <input id="adminPin" type="password" placeholder="Enter Secret PIN">
-
+    <p class="small">Enter administrator PIN.</p>
+    <input id="adminPin" type="password" placeholder="Secret PIN">
     <button class="btn" onclick="adminLogin()">Login</button>
     <p id="loginMessage" class="small"></p>
   </div>
 </div>
 
 
-<!-- ADMIN MODAL -->
+<!-- ADMIN DASHBOARD -->
 
 <div class="modal" id="adminModal">
   <div class="modal-box">
@@ -543,7 +465,8 @@ a{
     </div>
 
     <div class="notice">
-      Local demo dashboard. Changes are saved only in this browser.
+      This version stores information in this browser only.
+      It is a local prototype, not a connected multi-device system.
     </div>
 
     <div class="admin-section">
@@ -561,10 +484,10 @@ a{
       </select>
 
       <label>Description</label>
-      <textarea id="newDescription" placeholder="Course description"></textarea>
+      <textarea id="newDescription"></textarea>
 
       <label>Price (₹)</label>
-      <input id="newPrice" type="number" min="0" placeholder="Enter price">
+      <input id="newPrice" type="number" min="0">
 
       <label>PDF File</label>
       <input id="newPDF" type="file" accept="application/pdf">
@@ -597,20 +520,27 @@ a{
   <div class="modal-box">
 
     <div class="modal-head">
-      <h2>Course Application</h2>
+      <h2>Complete Your Payment</h2>
       <button class="close" onclick="closeModal('paymentModal')">×</button>
     </div>
 
     <div id="paymentDetails"></div>
 
     <div class="notice">
-      Scan the QR code below using your UPI app.
-      Pay the displayed amount and upload your payment screenshot.
-      Your application will be reviewed by the administrator.
+      Step 1: Scan the QR code or tap Pay Now.<br>
+      Step 2: Complete payment in your UPI app.<br>
+      Step 3: Return here and upload the payment screenshot.
     </div>
 
-    <img class="qr" src="payment-qr.png" alt="UPI Payment QR Code"
-         onerror="this.style.display='none'">
+    <img class="qr"
+         src="payment-qr.png"
+         alt="Payment QR Code"
+         onerror="this.outerHTML='<p class=notice>QR image not found. Upload payment-qr.png beside index.html.</p>'">
+
+    <button class="btn" style="width:100%;margin-bottom:15px"
+            onclick="payNow()">
+      Pay Now
+    </button>
 
     <form id="paymentForm">
 
@@ -619,6 +549,7 @@ a{
 
       <label>Mobile Number</label>
       <input id="buyerPhone" required type="tel"
+             inputmode="numeric"
              pattern="[0-9]{10}" maxlength="10"
              placeholder="10 digit mobile number">
 
@@ -626,14 +557,15 @@ a{
       <input id="paymentProof" type="file"
              accept="image/*" required>
 
-      <button class="btn" type="submit">
+      <button class="btn" type="submit" style="width:100%">
         Submit Application
       </button>
+
     </form>
 
     <p class="small">
-      Submitting a screenshot does not automatically confirm payment.
-      The administrator must verify the payment separately.
+      Screenshot submission is not automatic payment confirmation.
+      Payment must be verified separately before approval.
     </p>
 
   </div>
@@ -661,6 +593,7 @@ a{
 
       <label>Mobile Number</label>
       <input id="customPhone" required type="tel"
+             inputmode="numeric"
              pattern="[0-9]{10}" maxlength="10">
 
       <label>Platform</label>
@@ -671,8 +604,7 @@ a{
       </select>
 
       <label>Profile / Channel Link</label>
-      <input id="customLink" type="url" required
-             placeholder="https://">
+      <input id="customLink" type="url" required placeholder="https://">
 
       <label>What Help Do You Need?</label>
       <textarea id="customNeed" required maxlength="1000"></textarea>
@@ -706,14 +638,16 @@ a{
 
 
 <script>
-/* ==============================
-   CONFIGURATION
-============================== */
 
-// Change this PIN before using the demo.
-// This PIN is visible in the browser source.
-// Do not use this client-side PIN for real admin security.
-const ADMIN_PIN = "Ayan.ii";
+/* CONFIGURATION */
+
+const ADMIN_PIN = "Ayan.yy";
+
+/*
+  UPI ID is read from the QR code you supplied.
+  The account holder's name is not printed on this webpage.
+*/
+const UPI_ID = "project.1@ibl";
 
 const COURSE_KEY = "cga_courses_v2";
 const APPLICATION_KEY = "cga_applications_v2";
@@ -726,9 +660,7 @@ let logoTaps = [];
 let isAdmin = false;
 
 
-/* ==============================
-   STORAGE HELPERS
-============================== */
+/* STORAGE */
 
 function readData(key){
   try{
@@ -743,9 +675,7 @@ function saveData(key,data){
 }
 
 
-/* ==============================
-   STARTER COURSES
-============================== */
+/* STARTER COURSES */
 
 function initializeCourses(){
 
@@ -756,26 +686,26 @@ function initializeCourses(){
     courses = [
       {
         id:"starter_1",
-        title:"YouTube Channel Growth Guide",
+        title:"Basic YouTube Knowledge",
         platform:"youtube",
-        description:"Learn the basics of building and improving a YouTube channel.",
-        price:0,
+        description:"Learn the basic knowledge of YouTube channel growth.",
+        price:199,
         pdf:null
       },
       {
         id:"starter_2",
-        title:"Instagram Reels Growth Guide",
+        title:"Instagram Reels Guide",
         platform:"instagram",
         description:"Learn about Reels, profile setup and content planning.",
-        price:0,
+        price:199,
         pdf:null
       },
       {
         id:"starter_3",
-        title:"Facebook Page Growth Guide",
+        title:"Facebook Growth Guide",
         platform:"facebook",
         description:"Learn page setup, posts and audience engagement.",
-        price:0,
+        price:199,
         pdf:null
       }
     ];
@@ -785,13 +715,11 @@ function initializeCourses(){
 }
 
 
-/* ==============================
-   COURSE DISPLAY
-============================== */
+/* COURSE DISPLAY */
 
 function showCourses(platform){
 
-  let courses = readData(COURSE_KEY)
+  const courses = readData(COURSE_KEY)
     .filter(c => c.platform === platform);
 
   document.getElementById("courseHeading").textContent =
@@ -818,6 +746,10 @@ function showAllCourses(){
 function scrollToCourses(){
   document.getElementById("coursesSection")
     .scrollIntoView({behavior:"smooth"});
+}
+
+function renderCourses(){
+  showAllCourses();
 }
 
 function renderCourseCards(courses){
@@ -854,9 +786,6 @@ function renderCourseCards(courses){
   `).join("");
 }
 
-function renderCourses(){
-  showAllCourses();
-}
 
 function openCourse(id){
 
@@ -880,16 +809,35 @@ function openCourse(id){
 
   document.getElementById("paymentDetails").innerHTML = `
     <h3>${escapeHTML(course.title)}</h3>
-    <div class="price">Amount: ₹${Number(course.price).toFixed(2)}</div>
+    <div class="price">Total Amount: ₹${Number(course.price).toFixed(2)}</div>
   `;
 
   openModal("paymentModal");
 }
 
 
-/* ==============================
-   PDF DOWNLOAD
-============================== */
+/* UPI PAYMENT */
+
+function payNow(){
+
+  if(!selectedCourse){
+    alert("Please select a course first.");
+    return;
+  }
+
+  const amount = Number(selectedCourse.price).toFixed(2);
+
+  const paymentURL =
+    "upi://pay?pa=" + encodeURIComponent(UPI_ID) +
+    "&am=" + encodeURIComponent(amount) +
+    "&cu=INR" +
+    "&tn=" + encodeURIComponent("Course Payment");
+
+  window.location.href = paymentURL;
+}
+
+
+/* PDF DOWNLOAD */
 
 function downloadPDF(data,title){
 
@@ -907,9 +855,7 @@ function downloadPDF(data,title){
 }
 
 
-/* ==============================
-   CUSTOMER APPLICATION
-============================== */
+/* COURSE APPLICATION */
 
 document.getElementById("paymentForm")
 .addEventListener("submit",async function(e){
@@ -946,7 +892,6 @@ document.getElementById("paymentForm")
   }
 
   const proof = await fileToDataURL(file);
-
   const applicationID = generateID();
 
   const application = {
@@ -974,26 +919,22 @@ document.getElementById("paymentForm")
   }
 
   closeModal("paymentModal");
-
-  document.getElementById("paymentForm").reset();
+  this.reset();
 
   alert(
-    "Application submitted successfully!\\n\\n" +
+    "Application submitted successfully!\n\n" +
     "Your Application ID: " + applicationID +
-    "\\n\\nKeep this ID to check your status."
+    "\n\nKeep this ID to check your status."
   );
 
   document.getElementById("statusID").value = applicationID;
+
   selectedCourse = null;
-
   openModal("statusModal");
-
 });
 
 
-/* ==============================
-   CUSTOM PDF REQUEST
-============================== */
+/* CUSTOM REQUEST */
 
 document.getElementById("customForm")
 .addEventListener("submit",function(e){
@@ -1029,16 +970,14 @@ document.getElementById("customForm")
   this.reset();
 
   alert(
-    "Your custom request has been submitted.\\n" +
+    "Your custom request has been submitted.\n" +
     "Application ID: " + request.id
   );
 
 });
 
 
-/* ==============================
-   STATUS LOOKUP
-============================== */
+/* STATUS LOOKUP */
 
 function openStatus(){
   openModal("statusModal");
@@ -1077,21 +1016,20 @@ function checkStatus(){
       <p><b>Application ID:</b> ${escapeHTML(item.id)}</p>
       <p><b>Name:</b> ${escapeHTML(item.name)}</p>
       <p><b>Status:</b>
-        <span class="status ${item.status}">
+        <span class="status ${statusClass(item.status)}">
           ${escapeHTML(item.status)}
         </span>
       </p>
   `;
 
   if(item.type === "course"){
-    html += `
-      <p><b>Course:</b> ${escapeHTML(item.courseTitle)}</p>
-    `;
+    html += `<p><b>Course:</b> ${escapeHTML(item.courseTitle)}</p>`;
   }else{
-    html += `
-      <p><b>Request:</b> Custom PDF</p>
-      <p><b>Platform:</b> ${escapeHTML(item.platform)}</p>
-    `;
+    html += `<p><b>Request:</b> Custom PDF</p>`;
+    html += `<p><b>Platform:</b> ${escapeHTML(item.platform)}</p>`;
+    if(item.price !== null){
+      html += `<p><b>Custom Price:</b> ₹${Number(item.price).toFixed(2)}</p>`;
+    }
   }
 
   if(item.status === "Pending"){
@@ -1099,15 +1037,22 @@ function checkStatus(){
       <div class="notice">
         Your application is under review.
         Please check again later.
-        The review target is within 24 hours.
+        Target review time: within 24 hours.
+      </div>
+    `;
+  }
+
+  if(item.status === "Price Set"){
+    html += `
+      <div class="notice">
+        Your custom request has been reviewed and a price has been set.
+        Please contact the Help Center for payment instructions.
       </div>
     `;
   }
 
   if(item.status === "Rejected"){
-    html += `
-      <p class="small">Your application was not approved.</p>
-    `;
+    html += `<p class="small">Your application was not approved.</p>`;
   }
 
   if(item.status === "Approved" && item.pdf){
@@ -1119,8 +1064,12 @@ function checkStatus(){
   }
 
   html += "</div>";
-
   result.innerHTML = html;
+}
+
+function statusClass(status){
+  if(status === "Price Set") return "PriceSet";
+  return status;
 }
 
 function downloadApproved(id){
@@ -1137,9 +1086,7 @@ function downloadApproved(id){
 }
 
 
-/* ==============================
-   ADMIN LOGO SECRET ACCESS
-============================== */
+/* ADMIN SECRET ACCESS */
 
 document.getElementById("secretLogo")
 .addEventListener("click",function(){
@@ -1157,9 +1104,7 @@ document.getElementById("secretLogo")
 });
 
 
-/* ==============================
-   ADMIN LOGIN
-============================== */
+/* ADMIN LOGIN */
 
 function adminLogin(){
 
@@ -1197,7 +1142,6 @@ function adminLogin(){
       document.getElementById("loginMessage").textContent =
         "Too many attempts. Wait 30 seconds.";
     }else{
-
       document.getElementById("loginMessage").textContent =
         "Incorrect PIN. Attempts left: " + (5-failedAttempts);
     }
@@ -1205,25 +1149,20 @@ function adminLogin(){
 }
 
 function adminLogout(){
-
   isAdmin = false;
   closeModal("adminModal");
 }
 
 function requireAdmin(){
-
   if(!isAdmin){
     alert("Admin access required.");
     return false;
   }
-
   return true;
 }
 
 
-/* ==============================
-   ADMIN DASHBOARD
-============================== */
+/* ADMIN DASHBOARD */
 
 function renderAdmin(){
 
@@ -1235,9 +1174,7 @@ function renderAdmin(){
 }
 
 
-/* ==============================
-   ADD COURSE
-============================== */
+/* ADD COURSE */
 
 async function addCourse(){
 
@@ -1270,16 +1207,15 @@ async function addCourse(){
   }
 
   const pdf = await fileToDataURL(file);
-
   const courses = readData(COURSE_KEY);
 
   courses.unshift({
     id:"course_" + Date.now(),
-    title:title,
-    platform:platform,
-    description:description,
-    price:price,
-    pdf:pdf
+    title,
+    platform,
+    description,
+    price,
+    pdf
   });
 
   try{
@@ -1301,9 +1237,7 @@ async function addCourse(){
 }
 
 
-/* ==============================
-   ADMIN COURSE MANAGEMENT
-============================== */
+/* MANAGE COURSES */
 
 function renderAdminCourses(){
 
@@ -1317,24 +1251,21 @@ function renderAdminCourses(){
 
   box.innerHTML = courses.map(c => `
 
-    <div class="card" style="margin:10px 0">
+    <div class="card">
 
       <h3>${escapeHTML(c.title)}</h3>
       <p>${escapeHTML(c.platform)}</p>
-
       <p>Current Price: ₹${Number(c.price).toFixed(2)}</p>
 
       <input type="number" min="0"
              id="price_${c.id}"
-             value="${Number(c.price)}"
-             placeholder="New price">
+             value="${Number(c.price)}">
 
       <button class="btn" onclick="updatePrice('${c.id}')">
         Update Price
       </button>
 
-      <button class="btn btn-danger"
-              onclick="deleteCourse('${c.id}')">
+      <button class="btn btn-danger" onclick="deleteCourse('${c.id}')">
         Delete
       </button>
 
@@ -1352,8 +1283,7 @@ function updatePrice(id){
 
   if(!course) return;
 
-  const input = document.getElementById("price_" + id);
-  const price = Number(input.value);
+  const price = Number(document.getElementById("price_" + id).value);
 
   if(!Number.isFinite(price) || price < 0){
     alert("Enter a valid price.");
@@ -1386,9 +1316,7 @@ function deleteCourse(id){
 }
 
 
-/* ==============================
-   ADMIN APPLICATION MANAGEMENT
-============================== */
+/* ADMIN APPLICATIONS */
 
 function renderAdminApplications(){
 
@@ -1402,7 +1330,7 @@ function renderAdminApplications(){
 
   box.innerHTML = applications.map(a => `
 
-    <div class="card" style="margin:12px 0">
+    <div class="card">
 
       <h3>${escapeHTML(a.courseTitle)}</h3>
 
@@ -1411,29 +1339,25 @@ function renderAdminApplications(){
       <p><b>Mobile:</b> ${escapeHTML(a.phone)}</p>
       <p><b>Amount:</b> ₹${Number(a.price).toFixed(2)}</p>
 
-      <p>
-        <b>Status:</b>
-        <span class="status ${a.status}">
+      <p><b>Status:</b>
+        <span class="status ${statusClass(a.status)}">
           ${escapeHTML(a.status)}
         </span>
       </p>
 
-      <button class="btn btn-outline"
-              onclick="viewProof('${a.id}')">
+      <button class="btn btn-outline" onclick="viewProof('${a.id}')">
         View Screenshot
       </button>
 
-      <label>Upload Course PDF for this customer</label>
+      <label>Upload PDF for customer</label>
       <input type="file" accept="application/pdf"
              id="approvedPDF_${a.id}">
 
-      <button class="btn"
-              onclick="approveApplication('${a.id}')">
+      <button class="btn" onclick="approveApplication('${a.id}')">
         Approve & Upload PDF
       </button>
 
-      <button class="btn btn-danger"
-              onclick="rejectApplication('${a.id}')">
+      <button class="btn btn-danger" onclick="rejectApplication('${a.id}')">
         Reject
       </button>
 
@@ -1454,10 +1378,10 @@ function viewProof(id){
   const win = window.open();
 
   if(win){
-    win.document.write(
-      '<img src="' + item.proof +
-      '" style="max-width:100%;height:auto">'
-    );
+    const image = win.document.createElement("img");
+    image.src = item.proof;
+    image.style.maxWidth = "100%";
+    win.document.body.appendChild(image);
   }else{
     alert("Please allow pop-ups to view the screenshot.");
   }
@@ -1472,21 +1396,15 @@ async function approveApplication(id){
 
   if(!item) return;
 
-  const input = document.getElementById("approvedPDF_" + id);
-  const file = input.files[0];
+  const file = document.getElementById("approvedPDF_" + id).files[0];
 
   if(!file){
     alert("Upload the PDF before approval.");
     return;
   }
 
-  if(file.type !== "application/pdf"){
-    alert("Only PDF files are allowed.");
-    return;
-  }
-
-  if(file.size > 5 * 1024 * 1024){
-    alert("PDF must be smaller than 5 MB.");
+  if(file.type !== "application/pdf" || file.size > 5*1024*1024){
+    alert("Upload a PDF smaller than 5 MB.");
     return;
   }
 
@@ -1498,12 +1416,11 @@ async function approveApplication(id){
   try{
     saveData(APPLICATION_KEY,applications);
   }catch(e){
-    alert("Storage is full. Please use a smaller PDF.");
+    alert("Storage is full. Use a smaller PDF.");
     return;
   }
 
   renderAdmin();
-
   alert("Application approved.");
 }
 
@@ -1527,9 +1444,7 @@ function rejectApplication(id){
 }
 
 
-/* ==============================
-   CUSTOM REQUEST ADMIN
-============================== */
+/* CUSTOM REQUEST ADMIN */
 
 function renderAdminCustomRequests(){
 
@@ -1543,7 +1458,7 @@ function renderAdminCustomRequests(){
 
   box.innerHTML = requests.map(r => `
 
-    <div class="card" style="margin:12px 0">
+    <div class="card">
 
       <h3>Custom PDF Request</h3>
 
@@ -1561,9 +1476,8 @@ function renderAdminCustomRequests(){
 
       <p><b>Help Needed:</b> ${escapeHTML(r.need)}</p>
 
-      <p>
-        <b>Status:</b>
-        <span class="status ${r.status}">
+      <p><b>Status:</b>
+        <span class="status ${statusClass(r.status)}">
           ${escapeHTML(r.status)}
         </span>
       </p>
@@ -1585,8 +1499,7 @@ function renderAdminCustomRequests(){
         Approve & Upload PDF
       </button>
 
-      <button class="btn btn-danger"
-              onclick="rejectCustom('${r.id}')">
+      <button class="btn btn-danger" onclick="rejectCustom('${r.id}')">
         Reject
       </button>
 
@@ -1617,10 +1530,9 @@ function setCustomPrice(id){
   item.status = "Price Set";
 
   saveData(CUSTOM_KEY,requests);
-
   renderAdmin();
 
-  alert("Custom price saved. Contact the customer with the amount.");
+  alert("Custom price saved.");
 }
 
 async function approveCustom(id){
@@ -1637,21 +1549,15 @@ async function approveCustom(id){
     return;
   }
 
-  const input = document.getElementById("customPDF_" + id);
-  const file = input.files[0];
+  const file = document.getElementById("customPDF_" + id).files[0];
 
   if(!file){
     alert("Upload the custom PDF.");
     return;
   }
 
-  if(file.type !== "application/pdf"){
-    alert("Only PDF files are allowed.");
-    return;
-  }
-
-  if(file.size > 5 * 1024 * 1024){
-    alert("PDF must be smaller than 5 MB.");
+  if(file.type !== "application/pdf" || file.size > 5*1024*1024){
+    alert("Upload a PDF smaller than 5 MB.");
     return;
   }
 
@@ -1668,7 +1574,6 @@ async function approveCustom(id){
   }
 
   renderAdmin();
-
   alert("Custom request approved.");
 }
 
@@ -1692,9 +1597,11 @@ function rejectCustom(id){
 }
 
 
-/* ==============================
-   COMMON HELPERS
-============================== */
+/* COMMON HELPERS */
+
+function openCustom(){
+  openModal("customModal");
+}
 
 function openModal(id){
   document.getElementById(id).classList.add("active");
@@ -1762,9 +1669,7 @@ function safeURL(value){
 }
 
 
-/* ==============================
-   INITIALIZE
-============================== */
+/* INITIALIZE */
 
 initializeCourses();
 renderCourses();
