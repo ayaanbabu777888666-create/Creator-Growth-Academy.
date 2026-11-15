@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#071710">
+
+<title>Creator Growth Academy</title>
+
+<style>
+:root{
+--bg:#06140e;
+--card:#10251a;
+--green:#16c477;
+--light:#a9f36b;
+--text:#ffffff;
+--muted:#a2b8aa;
+--border:#234333;
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:var(--bg);
+color:var(--text);
+}
+
+header{
+padding:18px;
+background:#0c2116;
+border-bottom:1px solid var(--border);
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:5;
+}
+
+.logo{
+font-size:19px;
+font-weight:bold;
+color:var(--light);
+}
+
+button{
+border:0;
+padding:12px 18px;
+border-radius:9px;
+font-weight:bold;
+cursor:pointer;
+}
+
+.primary{
+background:var(--green);
+color:#04150c;
+}
+
+.secondary{
+background:#1a3928;
+color:white;
+border:1px solid var(--border);
+}
+
+.hero{
+padding:55px 20px;
+text-align:center;
+background:linear-gradient(140deg,#103d26,#06140e);
+}
+
+.hero h1{
+font-size:35px;
+}
+
+.hero h1 span{
+color:var(--light);
+}
+
+.hero p{
+color:var(--muted);
+line-height:1.7;
+}
+
+.container{
+max-width:1100px;
+margin:auto;
+padding:25px 16px;
+}
+
+.section-title{
+margin:25px 0;
+font-size:24px;
+}
+
+.filters{
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+margin-bottom:20px;
+}
+
+.filter{
+background:#153222;
+color:white;
+}
+
+.filter.active{
+background:var(--green);
+color:#04150c;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:17px;
+}
+
+.card{
+background:var(--card);
+border:1px solid var(--border);
+border-radius:15px;
+padding:20px;
+}
+
+.card h3{
+margin-top:10px;
+}
+
+.card p{
+color:var(--muted);
+font-size:14px;
+line-height:1.6;
+}
+
+.category{
+color:var(--light);
+font-size:12px;
+font-weight:bold;
+}
+
+.price{
+color:var(--light);
+font-size:18px;
+font-weight:bold;
+margin:15px 0;
+}
+
+.card button{
+width:100%;
+margin-top:8px;
+}
+
+.badge{
+display:inline-block;
+padding:5px 9px;
+background:#19452d;
+color:var(--light);
+border-radius:20px;
+font-size:11px;
+}
+
+footer{
+padding:30px 15px;
+text-align:center;
+color:var(--muted);
+border-top:1px solid var(--border);
+margin-top:50px;
+}
+
+.modal{
+display:none;
+position:fixed;
+inset:0;
+background:#000c;
+z-index:20;
+align-items:center;
+justify-content:center;
+padding:15px;
+}
+
+.modal.show{
+display:flex;
+}
+
+.modal-content{
+background:#10251a;
+border:1px solid var(--border);
+padding:22px;
+border-radius:15px;
+width:100%;
+max-width:450px;
+max-height:90vh;
+overflow:auto;
+}
+
+input,select,textarea{
+width:100%;
+padding:12px;
+margin:7px 0 15px;
+background:#071710;
+color:white;
+border:1px solid var(--border);
+border-radius:8px;
+}
+
+.modal-content button{
+margin-top:7px;
+}
+
+.close{
+float:right;
+background:#294332;
+color:white;
+}
+
+.admin-item{
+background:#071710;
+padding:12px;
+border-radius:9px;
+margin:9px 0;
+display:flex;
+justify-content:space-between;
+gap:10px;
+align-items:center;
+font-size:13px;
+}
+
+.warning{
+color:#f4d98b;
+font-size:12px;
+line-height:1.5;
+}
+
+@media(max-width:500px){
+.hero h1{font-size:29px}
+header{padding:13px}
+.logo{font-size:15px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">✦ CREATOR ACADEMY</div>
+<button class="secondary" onclick="openAdmin()">ADMIN</button>
+</header>
+
+<section class="hero">
+<h1>CREATOR GROWTH <span>ACADEMY</span></h1>
+
+<p>
+Learn YouTube, Instagram and Facebook growth.
+<br>
+Discover content strategies and digital earning skills.
+</p>
+
+<button class="primary"
+onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">
+EXPLORE COURSES
+</button>
+</section>
+
+<div class="container" id="courses">
+
+<h2 class="section-title">Premium Learning Library</h2>
+
+<div class="filters">
+<button class="filter active" onclick="filterCourses('All',this)">All</button>
+<button class="filter" onclick="filterCourses('YouTube',this)">YouTube</button>
+<button class="filter" onclick="filterCourses('Instagram',this)">Instagram</button>
+<button class="filter" onclick="filterCourses('Facebook',this)">Facebook</button>
+<button class="filter" onclick="filterCourses('Creator Skills',this)">Creator Skills</button>
+</div>
+
+<div class="grid" id="courseGrid"></div>
+
+</div>
+
+<footer>
+© 2026 Creator Growth Academy
+<br><br>
+Independent educational platform.
+</footer>
+
+<!-- ADMIN MODAL -->
+
+<div class="modal" id="adminModal">
+<div class="modal-content">
+
+<button class="close" onclick="closeModal('adminModal')">✕</button>
+
+<h2>Admin Dashboard</h2>
+
+<div id="adminLogin">
+
+<p class="warning">Demo Admin PIN: 2580</p>
+
+<input id="adminPin" type="password" placeholder="Admin PIN">
+
+<button class="primary" onclick="loginAdmin()">LOGIN</button>
+
+</div>
+
+<div id="adminPanel" style="display:none">
+
+<h3>Add New PDF Course</h3>
+
+<input id="courseName" placeholder="Course Name">
+
+<select id="courseCategory">
+<option>YouTube</option>
+<option>Instagram</option>
+<option>Facebook</option>
+<option>Creator Skills</option>
+</select>
+
+<textarea id="courseDescription"
+placeholder="Course Description"></textarea>
+
+<input id="coursePrice" type="number"
+min="0" placeholder="Course Price (0 = Free)">
+
+<input id="coursePDF" type="file" accept=".pdf,application/pdf">
+
+<button class="primary" onclick="addCourse()">UPLOAD PDF</button>
+
+<h3>Manage Courses</h3>
+
+<div id="adminCourses"></div>
+
+<button class="secondary" onclick="logoutAdmin()">LOGOUT</button>
+
+</div>
+</div>
+</div>
+
+<!-- PAYMENT NOTICE -->
+
+<div class="modal" id="paymentModal">
+<div class="modal-content">
+
+<button class="close" onclick="closeModal('paymentModal')">✕</button>
+
+<h2>Premium Course</h2>
+
+<p id="paymentCourse"></p>
+
+<h3 id="paymentPrice" style="color:#a9f36b"></h3>
+
+<p class="warning">
+Online payment verification is not connected yet.
+This course remains locked until a verified payment system is configured.
+</p>
+
+<button class="secondary" onclick="closeModal('paymentModal')">
+GO BACK
+</button>
+
+</div>
+</div>
+
+<script>
+
+let courses = JSON.parse(localStorage.getItem("courses") || "[]");
+
+let activeCategory = "All";
+let admin = false;
+
+function save(){
+localStorage.setItem("courses",JSON.stringify(courses));
+}
+
+function openAdmin(){
+document.getElementById("adminModal").classList.add("show");
+}
+
+function closeModal(id){
+document.getElementById(id).classList.remove("show");
+}
+
+function loginAdmin(){
+
+if(document.getElementById("adminPin").value==="2580"){
+
+admin=true;
+
+document.getElementById("adminLogin").style.display="none";
+document.getElementById("adminPanel").style.display="block";
+
+renderAdmin();
+
+}else{
+
+alert("Incorrect Admin PIN");
+
+}
+
+}
+
+function logoutAdmin(){
+
+admin=false;
+
+document.getElementById("adminLogin").style.display="block";
+document.getElementById("adminPanel").style.display="none";
+
+closeModal("adminModal");
+
+}
+
+function addCourse(){
+
+if(!admin)return;
+
+let name=document.getElementById("courseName").value.trim();
+let category=document.getElementById("courseCategory").value;
+let description=document.getElementById("courseDescription").value.trim();
+let price=Number(document.getElementById("coursePrice").value);
+let file=document.getElementById("coursePDF").files[0];
+
+if(!name || !file){
+alert("Enter course name and select PDF");
+return;
+}
+
+if(file.type!=="application/pdf" && !file.name.toLowerCase().endsWith(".pdf")){
+alert("Only PDF files are allowed");
+return;
+}
+
+if(price<0 || !Number.isFinite(price)){
+alert("Invalid price");
+return;
+}
+
+if(file.size>5*1024*1024){
+alert("PDF must be smaller than 5 MB");
+return;
+}
+
+let reader=new FileReader();
+
+reader.onload=function(){
+
+courses.push({
+id:Date.now(),
+name,
+category,
+description,
+price,
+pdf:reader.result
+});
+
+save();
+render();
+renderAdmin();
+
+document.getElementById("courseName").value="";
+document.getElementById("courseDescription").value="";
+document.getElementById("coursePrice").value="";
+document.getElementById("coursePDF").value="";
+
+alert("Course added successfully");
+
+};
+
+reader.readAsDataURL(file);
+
+}
+
+function render(){
+
+let grid=document.getElementById("courseGrid");
+
+let list=courses.filter(c=>
+activeCategory==="All" || c.category===activeCategory
+);
+
+if(!list.length){
+
+grid.innerHTML="<p>No courses available yet.</p>";
+return;
+
+}
+
+grid.innerHTML=list.map(c=>`
+
+<div class="card">
+
+<span class="category">${c.category}</span>
+
+<h3>${escapeHTML(c.name)}</h3>
+
+<p>${escapeHTML(c.description || "Premium learning guide")}</p>
+
+<div class="price">
+${Number(c.price)===0?"FREE":"₹"+Number(c.price)}
+</div>
+
+${Number(c.price)===0
+?`<button class="primary" onclick="openPDF(${c.id})">READ PDF</button>`
+:`<button class="secondary" onclick="showPayment(${c.id})">🔒 PAY NOW</button>`
+}
+
+</div>
+
+`).join("");
+
+}
+
+function escapeHTML(value){
+return String(value).replace(/[&<>"']/g,c=>({
+"&":"&amp;",
+"<":"&lt;",
+">":"&gt;",
+'"':"&quot;",
+"'":"&#39;"
+}[c]));
+}
+
+function openPDF(id){
+
+let c=courses.find(x=>x.id===id);
+
+if(!c)return;
+
+let win=window.open();
+
+if(!win){
+alert("Allow popups to view PDF");
+return;
+}
+
+win.document.write(`
+<iframe src="${c.pdf}" style="width:100%;height:100%;border:0"></iframe>
+`);
+
+}
+
+function showPayment(id){
+
+let c=courses.find(x=>x.id===id);
+
+if(!c)return;
+
+document.getElementById("paymentCourse").innerText=c.name;
+
+document.getElementById("paymentPrice").innerText="₹"+c.price;
+
+document.getElementById("paymentModal").classList.add("show");
+
+}
+
+function filterCourses(category,button){
+
+activeCategory=category;
+
+document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
+
+button.classList.add("active");
+
+render();
+
+}
+
+function renderAdmin(){
+
+let box=document.getElementById("adminCourses");
+
+box.innerHTML=courses.map(c=>`
+
+<div class="admin-item">
+
+<span>${escapeHTML(c.name)}</span>
+
+<button onclick="deleteCourse(${c.id})"
+style="background:#762c2c;color:white;padding:8px">
+DELETE
+</button>
+
+</div>
+
+`).join("");
+
+}
+
+function deleteCourse(id){
+
+if(!confirm("Delete this course?"))return;
+
+courses=courses.filter(c=>c.id!==id);
+
+save();
+render();
+renderAdmin();
+
+}
+
+render();
+
+</script>
+
+</body>
+</html>
