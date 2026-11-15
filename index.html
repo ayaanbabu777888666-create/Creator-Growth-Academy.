@@ -3,240 +3,476 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#071710">
+<meta name="theme-color" content="#06140f">
+<meta name="description" content="Creator Growth Academy - Learn YouTube, Instagram and Facebook growth.">
 
 <title>Creator Growth Academy</title>
 
 <style>
 :root{
---bg:#06140e;
---card:#10251a;
---green:#16c477;
---light:#a9f36b;
---text:#ffffff;
---muted:#a2b8aa;
---border:#234333;
+    --bg:#06140f;
+    --panel:#0d2118;
+    --panel2:#102b20;
+    --green:#16a66a;
+    --light:#83ffc0;
+    --text:#f2fff7;
+    --muted:#9bb5a6;
+    --border:rgba(255,255,255,.09);
+    --red:#ff3434;
+    --blue:#1877f2;
 }
 
-*{box-sizing:border-box}
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
 body{
-margin:0;
-font-family:Arial,sans-serif;
-background:var(--bg);
-color:var(--text);
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
 }
 
-header{
-padding:18px;
-background:#0c2116;
-border-bottom:1px solid var(--border);
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
-z-index:5;
-}
-
-.logo{
-font-size:19px;
-font-weight:bold;
-color:var(--light);
+button,input,select,textarea{
+    font:inherit;
 }
 
 button{
-border:0;
-padding:12px 18px;
-border-radius:9px;
-font-weight:bold;
-cursor:pointer;
+    cursor:pointer;
+    border:none;
 }
 
-.primary{
-background:var(--green);
-color:#04150c;
+header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    padding:16px 5%;
+    background:#081a12;
+    border-bottom:1px solid var(--border);
+    position:sticky;
+    top:0;
+    z-index:10;
 }
 
-.secondary{
-background:#1a3928;
-color:white;
-border:1px solid var(--border);
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.brand-icon{
+    width:43px;
+    height:43px;
+    border-radius:13px;
+    background:linear-gradient(135deg,#087c4b,#20d58a);
+    display:grid;
+    place-items:center;
+    font-size:23px;
+    font-weight:bold;
+    color:white;
+}
+
+.brand h1{
+    font-size:18px;
+}
+
+.brand small{
+    color:var(--light);
+    font-size:10px;
+    letter-spacing:1.5px;
+}
+
+.admin-open{
+    background:#163c2b;
+    color:var(--light);
+    border:1px solid #286344;
+    padding:10px 14px;
+    border-radius:10px;
+    font-size:12px;
 }
 
 .hero{
-padding:55px 20px;
-text-align:center;
-background:linear-gradient(140deg,#103d26,#06140e);
+    padding:48px 6% 35px;
+    text-align:center;
+    background:
+    radial-gradient(ellipse at top,#12452d 0%,transparent 65%);
 }
 
-.hero h1{
-font-size:35px;
+.hero-tag{
+    display:inline-block;
+    color:var(--light);
+    border:1px solid #286344;
+    background:#102c1f;
+    border-radius:30px;
+    padding:8px 15px;
+    font-size:12px;
+    margin-bottom:18px;
 }
 
-.hero h1 span{
-color:var(--light);
+.hero h2{
+    font-size:clamp(28px,5vw,46px);
+    line-height:1.15;
+    margin-bottom:15px;
+}
+
+.hero h2 span{
+    color:var(--light);
 }
 
 .hero p{
-color:var(--muted);
-line-height:1.7;
+    max-width:650px;
+    margin:auto;
+    color:var(--muted);
+    line-height:1.7;
+    font-size:14px;
 }
 
 .container{
-max-width:1100px;
-margin:auto;
-padding:25px 16px;
+    width:90%;
+    max-width:1150px;
+    margin:auto;
 }
 
-.section-title{
-margin:25px 0;
-font-size:24px;
+.section-heading{
+    margin:30px 0 18px;
 }
 
-.filters{
-display:flex;
-gap:8px;
-flex-wrap:wrap;
-margin-bottom:20px;
+.section-heading h2{
+    font-size:22px;
+    margin-bottom:7px;
 }
 
-.filter{
-background:#153222;
-color:white;
+.section-heading p{
+    color:var(--muted);
+    font-size:13px;
 }
 
-.filter.active{
-background:var(--green);
-color:#04150c;
+/* PLATFORM CARDS */
+
+.platform-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+    margin-bottom:35px;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:17px;
+.platform-card{
+    background:linear-gradient(145deg,#10291d,#0a1c13);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:25px 15px;
+    text-align:center;
+    transition:.25s;
+    cursor:pointer;
 }
 
-.card{
-background:var(--card);
-border:1px solid var(--border);
-border-radius:15px;
-padding:20px;
+.platform-card:hover{
+    transform:translateY(-5px);
+    border-color:#36bd7d;
+    box-shadow:0 12px 35px rgba(0,0,0,.25);
 }
 
-.card h3{
-margin-top:10px;
+.platform-logo{
+    width:76px;
+    height:76px;
+    margin:0 auto 15px;
+    display:block;
 }
 
-.card p{
-color:var(--muted);
-font-size:14px;
-line-height:1.6;
+.platform-card h3{
+    font-size:19px;
+    margin-bottom:8px;
 }
 
-.category{
-color:var(--light);
-font-size:12px;
-font-weight:bold;
+.platform-card p{
+    color:var(--muted);
+    font-size:12px;
+    margin-bottom:17px;
+}
+
+.explore-btn{
+    padding:10px 18px;
+    background:#145b39;
+    color:#caffdf;
+    border-radius:9px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+/* COURSES */
+
+.course-section{
+    padding-bottom:50px;
+}
+
+.course-toolbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin:25px 0 18px;
+}
+
+.course-toolbar h2{
+    font-size:22px;
+}
+
+.back-btn{
+    background:#163b2a;
+    color:var(--light);
+    padding:9px 14px;
+    border-radius:9px;
+    display:none;
+}
+
+.course-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(230px,1fr));
+    gap:15px;
+}
+
+.course-card{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:17px;
+    display:flex;
+    flex-direction:column;
+    min-height:190px;
+}
+
+.course-icon{
+    width:42px;
+    height:42px;
+    display:grid;
+    place-items:center;
+    border-radius:12px;
+    background:#153e2b;
+    color:var(--light);
+    font-size:21px;
+    margin-bottom:14px;
+}
+
+.course-card h3{
+    font-size:16px;
+    margin-bottom:8px;
+    overflow-wrap:anywhere;
+}
+
+.course-card p{
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.5;
+    flex:1;
+}
+
+.course-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:8px;
+    margin-top:17px;
 }
 
 .price{
-color:var(--light);
-font-size:18px;
-font-weight:bold;
-margin:15px 0;
+    font-weight:bold;
+    color:var(--light);
 }
 
-.card button{
-width:100%;
-margin-top:8px;
+.open-course{
+    padding:9px 13px;
+    border-radius:8px;
+    background:var(--green);
+    color:white;
+    font-size:12px;
+    font-weight:bold;
 }
 
-.badge{
-display:inline-block;
-padding:5px 9px;
-background:#19452d;
-color:var(--light);
-border-radius:20px;
-font-size:11px;
+.locked{
+    background:#714d17;
+    color:#ffe0a1;
 }
 
-footer{
-padding:30px 15px;
-text-align:center;
-color:var(--muted);
-border-top:1px solid var(--border);
-margin-top:50px;
+.empty{
+    text-align:center;
+    color:var(--muted);
+    padding:35px 10px;
+    background:var(--panel);
+    border-radius:14px;
+    border:1px dashed #315440;
+    grid-column:1/-1;
 }
+
+/* ADMIN */
 
 .modal{
-display:none;
-position:fixed;
-inset:0;
-background:#000c;
-z-index:20;
-align-items:center;
-justify-content:center;
-padding:15px;
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:50;
+    background:rgba(0,0,0,.82);
+    overflow-y:auto;
+    padding:20px;
 }
 
-.modal.show{
-display:flex;
+.modal-box{
+    width:100%;
+    max-width:600px;
+    margin:30px auto;
+    padding:23px;
+    background:#0c2117;
+    border:1px solid #28543b;
+    border-radius:18px;
 }
 
-.modal-content{
-background:#10251a;
-border:1px solid var(--border);
-padding:22px;
-border-radius:15px;
-width:100%;
-max-width:450px;
-max-height:90vh;
-overflow:auto;
+.modal-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
 }
 
-input,select,textarea{
-width:100%;
-padding:12px;
-margin:7px 0 15px;
-background:#071710;
-color:white;
-border:1px solid var(--border);
-border-radius:8px;
+.close-btn{
+    background:#263e30;
+    color:white;
+    padding:8px 12px;
+    border-radius:8px;
 }
 
-.modal-content button{
-margin-top:7px;
+.form-group{
+    margin-bottom:15px;
 }
 
-.close{
-float:right;
-background:#294332;
-color:white;
+.form-group label{
+    display:block;
+    font-size:13px;
+    margin-bottom:7px;
+    color:#c6e7d3;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:12px;
+    border-radius:9px;
+    border:1px solid #315440;
+    background:#07170f;
+    color:white;
+    outline:none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:var(--green);
+}
+
+.primary-btn{
+    width:100%;
+    background:var(--green);
+    color:white;
+    padding:13px;
+    border-radius:10px;
+    font-weight:bold;
+}
+
+.danger-btn{
+    background:#7c2828;
+    color:white;
+    padding:8px 12px;
+    border-radius:7px;
+    font-size:11px;
 }
 
 .admin-item{
-background:#071710;
-padding:12px;
-border-radius:9px;
-margin:9px 0;
-display:flex;
-justify-content:space-between;
-gap:10px;
-align-items:center;
-font-size:13px;
+    background:#102c1e;
+    border:1px solid var(--border);
+    padding:13px;
+    border-radius:10px;
+    margin-top:10px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
 }
 
-.warning{
-color:#f4d98b;
-font-size:12px;
-line-height:1.5;
+.admin-item small{
+    color:var(--muted);
 }
 
-@media(max-width:500px){
-.hero h1{font-size:29px}
-header{padding:13px}
-.logo{font-size:15px}
+.notice{
+    color:#f4d99b;
+    font-size:12px;
+    line-height:1.6;
+    background:#342a16;
+    border:1px solid #665124;
+    padding:12px;
+    border-radius:9px;
+    margin:12px 0;
+}
+
+footer{
+    border-top:1px solid var(--border);
+    padding:25px 5%;
+    text-align:center;
+    color:var(--muted);
+    font-size:12px;
+    line-height:1.8;
+}
+
+@media(max-width:650px){
+    header{
+        padding:12px 4%;
+    }
+
+    .brand h1{
+        font-size:15px;
+    }
+
+    .brand small{
+        font-size:8px;
+    }
+
+    .platform-grid{
+        gap:9px;
+    }
+
+    .platform-card{
+        padding:18px 7px;
+        border-radius:14px;
+    }
+
+    .platform-logo{
+        width:54px;
+        height:54px;
+    }
+
+    .platform-card h3{
+        font-size:14px;
+    }
+
+    .platform-card p{
+        font-size:10px;
+        min-height:28px;
+    }
+
+    .explore-btn{
+        padding:8px 9px;
+        font-size:10px;
+    }
+
+    .hero{
+        padding:38px 5% 28px;
+    }
+
+    .container{
+        width:92%;
+    }
 }
 </style>
 </head>
@@ -244,364 +480,794 @@ header{padding:13px}
 <body>
 
 <header>
-<div class="logo">✦ CREATOR ACADEMY</div>
-<button class="secondary" onclick="openAdmin()">ADMIN</button>
+    <div class="brand">
+        <div class="brand-icon">C</div>
+        <div>
+            <h1>Creator Growth Academy</h1>
+            <small>LEARN • GROW • EARN</small>
+        </div>
+    </div>
+
+    <button class="admin-open" onclick="openAdmin()">
+        Admin Panel
+    </button>
 </header>
 
 <section class="hero">
-<h1>CREATOR GROWTH <span>ACADEMY</span></h1>
+    <div class="hero-tag">YOUR CREATOR JOURNEY STARTS HERE</div>
 
-<p>
-Learn YouTube, Instagram and Facebook growth.
-<br>
-Discover content strategies and digital earning skills.
-</p>
+    <h2>
+        Learn. Create.<br>
+        <span>Grow Your Audience.</span>
+    </h2>
 
-<button class="primary"
-onclick="document.getElementById('courses').scrollIntoView({behavior:'smooth'})">
-EXPLORE COURSES
-</button>
+    <p>
+        Learn social media growth, content creation,
+        audience building and monetization through
+        easy-to-understand PDF courses.
+    </p>
 </section>
 
-<div class="container" id="courses">
+<main class="container">
 
-<h2 class="section-title">Premium Learning Library</h2>
+    <section>
+        <div class="section-heading">
+            <h2>Choose Your Platform</h2>
+            <p>Select a platform to explore available PDF courses.</p>
+        </div>
 
-<div class="filters">
-<button class="filter active" onclick="filterCourses('All',this)">All</button>
-<button class="filter" onclick="filterCourses('YouTube',this)">YouTube</button>
-<button class="filter" onclick="filterCourses('Instagram',this)">Instagram</button>
-<button class="filter" onclick="filterCourses('Facebook',this)">Facebook</button>
-<button class="filter" onclick="filterCourses('Creator Skills',this)">Creator Skills</button>
-</div>
+        <div class="platform-grid">
 
-<div class="grid" id="courseGrid"></div>
+            <!-- YOUTUBE LOGO -->
+            <div class="platform-card" onclick="showCourses('youtube')">
 
-</div>
+                <svg class="platform-logo" viewBox="0 0 100 100"
+                     xmlns="http://www.w3.org/2000/svg">
+
+                    <rect x="5" y="18" width="90" height="64"
+                          rx="20" fill="#FF0033"/>
+
+                    <path d="M42 34 L42 66 L68 50 Z"
+                          fill="white"/>
+                </svg>
+
+                <h3>YouTube</h3>
+                <p>Video Growth & Monetization</p>
+                <button class="explore-btn">Explore Courses</button>
+            </div>
+
+            <!-- INSTAGRAM LOGO -->
+            <div class="platform-card" onclick="showCourses('instagram')">
+
+                <svg class="platform-logo" viewBox="0 0 100 100"
+                     xmlns="http://www.w3.org/2000/svg">
+
+                    <defs>
+                        <linearGradient id="igGradient"
+                            x1="0" y1="1" x2="1" y2="0">
+                            <stop offset="0%" stop-color="#FFD600"/>
+                            <stop offset="45%" stop-color="#FF0069"/>
+                            <stop offset="100%" stop-color="#7638FA"/>
+                        </linearGradient>
+                    </defs>
+
+                    <rect x="7" y="7" width="86" height="86"
+                          rx="25" fill="url(#igGradient)"/>
+
+                    <rect x="25" y="25" width="50" height="50"
+                          rx="15" fill="none"
+                          stroke="white" stroke-width="7"/>
+
+                    <circle cx="50" cy="50" r="12"
+                            fill="none" stroke="white"
+                            stroke-width="7"/>
+
+                    <circle cx="69" cy="31" r="5"
+                            fill="white"/>
+                </svg>
+
+                <h3>Instagram</h3>
+                <p>Reels, Followers & Growth</p>
+                <button class="explore-btn">Explore Courses</button>
+            </div>
+
+            <!-- FACEBOOK LOGO -->
+            <div class="platform-card" onclick="showCourses('facebook')">
+
+                <svg class="platform-logo" viewBox="0 0 100 100"
+                     xmlns="http://www.w3.org/2000/svg">
+
+                    <rect x="7" y="7" width="86" height="86"
+                          rx="19" fill="#1877F2"/>
+
+                    <path d="M58 92 V56 H72 L74 42 H58 V33
+                             C58 29 60 27 65 27 H74 V14
+                             C70 13 65 12 60 12
+                             C45 12 37 21 37 36 V42 H25 V56
+                             H37 V92 Z"
+                          fill="white"/>
+                </svg>
+
+                <h3>Facebook</h3>
+                <p>Pages, Reels & Audience</p>
+                <button class="explore-btn">Explore Courses</button>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="course-section">
+
+        <div class="course-toolbar">
+            <h2 id="courseTitle">Latest PDF Courses</h2>
+
+            <button class="back-btn" id="backBtn"
+                    onclick="showAllCourses()">
+                ← All Courses
+            </button>
+        </div>
+
+        <div class="course-grid" id="courseGrid"></div>
+
+    </section>
+
+</main>
 
 <footer>
-© 2026 Creator Growth Academy
-<br><br>
-Independent educational platform.
+    <strong>Creator Growth Academy</strong><br>
+    Learn skills. Build your audience. Grow your creator journey.<br>
+    © 2026 Creator Growth Academy. All rights reserved.
 </footer>
+
 
 <!-- ADMIN MODAL -->
 
 <div class="modal" id="adminModal">
-<div class="modal-content">
 
-<button class="close" onclick="closeModal('adminModal')">✕</button>
+    <div class="modal-box">
 
-<h2>Admin Dashboard</h2>
+        <div class="modal-head">
+            <h2>Admin Panel</h2>
+            <button class="close-btn" onclick="closeAdmin()">✕</button>
+        </div>
 
-<div id="adminLogin">
+        <div id="adminLogin">
 
-<p class="warning">Demo Admin PIN: 2580</p>
+            <div class="form-group">
+                <label>Admin PIN</label>
+                <input type="password" id="adminPin"
+                       placeholder="Enter Admin PIN">
+            </div>
 
-<input id="adminPin" type="password" placeholder="Admin PIN">
+            <button class="primary-btn" onclick="loginAdmin()">
+                Login
+            </button>
 
-<button class="primary" onclick="loginAdmin()">LOGIN</button>
+            <div class="notice">
+                Demo PIN: 2580. This is only a local demonstration.
+                Do not use this PIN or local-only admin system on a
+                public commercial website.
+            </div>
 
+        </div>
+
+        <div id="adminDashboard" style="display:none;">
+
+            <h3 style="margin-bottom:17px;">Upload New PDF Course</h3>
+
+            <div class="form-group">
+                <label>Course Title</label>
+                <input type="text" id="courseName"
+                       placeholder="Example: YouTube Monetization Guide">
+            </div>
+
+            <div class="form-group">
+                <label>Select Platform</label>
+                <select id="coursePlatform">
+                    <option value="youtube">YouTube</option>
+                    <option value="instagram">Instagram</option>
+                    <option value="facebook">Facebook</option>
+                    <option value="skills">Creator Skills</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Course Description</label>
+                <textarea id="courseDescription" rows="3"
+                    placeholder="Write a short description"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Course Price (₹)</label>
+                <input type="number" id="coursePrice"
+                       min="0" step="1" value="0">
+            </div>
+
+            <div class="form-group">
+                <label>Select PDF File</label>
+                <input type="file" id="courseFile" accept="application/pdf">
+            </div>
+
+            <div class="notice">
+                Free courses can be opened directly. Paid courses stay
+                locked until a real payment verification system is
+                connected. Uploads in this demo are stored only in this
+                browser and device. Keep PDF files under 5 MB.
+            </div>
+
+            <button class="primary-btn" onclick="addCourse()">
+                Upload Course
+            </button>
+
+            <hr style="border-color:#294b37;margin:25px 0;">
+
+            <h3>Manage Courses</h3>
+
+            <div id="adminCourseList"></div>
+
+            <button class="close-btn"
+                    style="margin-top:20px;"
+                    onclick="logoutAdmin()">
+                Logout
+            </button>
+
+        </div>
+
+    </div>
 </div>
 
-<div id="adminPanel" style="display:none">
-
-<h3>Add New PDF Course</h3>
-
-<input id="courseName" placeholder="Course Name">
-
-<select id="courseCategory">
-<option>YouTube</option>
-<option>Instagram</option>
-<option>Facebook</option>
-<option>Creator Skills</option>
-</select>
-
-<textarea id="courseDescription"
-placeholder="Course Description"></textarea>
-
-<input id="coursePrice" type="number"
-min="0" placeholder="Course Price (0 = Free)">
-
-<input id="coursePDF" type="file" accept=".pdf,application/pdf">
-
-<button class="primary" onclick="addCourse()">UPLOAD PDF</button>
-
-<h3>Manage Courses</h3>
-
-<div id="adminCourses"></div>
-
-<button class="secondary" onclick="logoutAdmin()">LOGOUT</button>
-
-</div>
-</div>
-</div>
-
-<!-- PAYMENT NOTICE -->
-
-<div class="modal" id="paymentModal">
-<div class="modal-content">
-
-<button class="close" onclick="closeModal('paymentModal')">✕</button>
-
-<h2>Premium Course</h2>
-
-<p id="paymentCourse"></p>
-
-<h3 id="paymentPrice" style="color:#a9f36b"></h3>
-
-<p class="warning">
-Online payment verification is not connected yet.
-This course remains locked until a verified payment system is configured.
-</p>
-
-<button class="secondary" onclick="closeModal('paymentModal')">
-GO BACK
-</button>
-
-</div>
-</div>
 
 <script>
 
-let courses = JSON.parse(localStorage.getItem("courses") || "[]");
+/* =====================================
+   CREATOR GROWTH ACADEMY
+   Browser-only demonstration
+===================================== */
 
-let activeCategory = "All";
-let admin = false;
+const STORAGE_KEY = "cga_courses_v1";
 
-function save(){
-localStorage.setItem("courses",JSON.stringify(courses));
+let courses = [];
+let currentPlatform = "all";
+let adminLoggedIn = false;
+
+const starterCourses = [
+    {
+        id:"starter_1",
+        title:"YouTube Channel Growth Guide",
+        platform:"youtube",
+        description:"Learn the basics of building and growing a YouTube channel.",
+        price:0,
+        fileData:"",
+        fileName:"",
+        demo:true
+    },
+    {
+        id:"starter_2",
+        title:"Instagram Reels Growth Guide",
+        platform:"instagram",
+        description:"Understand Reels, content planning and audience growth.",
+        price:0,
+        fileData:"",
+        fileName:"",
+        demo:true
+    },
+    {
+        id:"starter_3",
+        title:"Facebook Page Growth Guide",
+        platform:"facebook",
+        description:"Learn about Facebook pages, content and audience building.",
+        price:0,
+        fileData:"",
+        fileName:"",
+        demo:true
+    }
+];
+
+
+function loadCourses(){
+
+    try{
+        const saved = localStorage.getItem(STORAGE_KEY);
+
+        if(saved){
+            courses = JSON.parse(saved);
+        }else{
+            courses = starterCourses;
+            saveCourses();
+        }
+
+    }catch(error){
+        courses = starterCourses;
+    }
+
 }
+
+
+function saveCourses(){
+
+    try{
+        localStorage.setItem(STORAGE_KEY,JSON.stringify(courses));
+    }catch(error){
+        alert(
+            "Storage limit reached. Please use a smaller PDF file."
+        );
+    }
+
+}
+
+
+function platformName(platform){
+
+    const names = {
+        youtube:"YouTube",
+        instagram:"Instagram",
+        facebook:"Facebook",
+        skills:"Creator Skills"
+    };
+
+    return names[platform] || "Course";
+
+}
+
+
+function showAllCourses(){
+
+    currentPlatform = "all";
+
+    document.getElementById("courseTitle").textContent =
+        "Latest PDF Courses";
+
+    document.getElementById("backBtn").style.display = "none";
+
+    renderCourses();
+
+}
+
+
+function showCourses(platform){
+
+    currentPlatform = platform;
+
+    document.getElementById("courseTitle").textContent =
+        platformName(platform) + " PDF Courses";
+
+    document.getElementById("backBtn").style.display = "inline-block";
+
+    renderCourses();
+
+    document.getElementById("courseTitle").scrollIntoView({
+        behavior:"smooth",
+        block:"center"
+    });
+
+}
+
+
+function renderCourses(){
+
+    const grid = document.getElementById("courseGrid");
+
+    grid.innerHTML = "";
+
+    let filtered = courses;
+
+    if(currentPlatform !== "all"){
+        filtered = courses.filter(course =>
+            course.platform === currentPlatform
+        );
+    }
+
+    if(filtered.length === 0){
+
+        grid.innerHTML = `
+            <div class="empty">
+                <h3>No Courses Available</h3>
+                <p>New PDF courses will be added here soon.</p>
+            </div>
+        `;
+
+        return;
+    }
+
+    filtered.forEach(course => {
+
+        const isFree = Number(course.price) === 0;
+
+        const card = document.createElement("div");
+
+        card.className = "course-card";
+
+        const icon = document.createElement("div");
+        icon.className = "course-icon";
+        icon.textContent = "PDF";
+
+        const title = document.createElement("h3");
+        title.textContent = course.title;
+
+        const description = document.createElement("p");
+        description.textContent = course.description || "PDF learning course.";
+
+        const bottom = document.createElement("div");
+        bottom.className = "course-bottom";
+
+        const price = document.createElement("span");
+        price.className = "price";
+        price.textContent = isFree ? "FREE" : "₹" + course.price;
+
+        const button = document.createElement("button");
+
+        button.className = "open-course " + (isFree ? "" : "locked");
+
+        button.textContent = isFree ? "Open PDF" : "🔒 Locked";
+
+        button.onclick = () => openCourse(course.id);
+
+        bottom.appendChild(price);
+        bottom.appendChild(button);
+
+        card.appendChild(icon);
+        card.appendChild(title);
+        card.appendChild(description);
+        card.appendChild(bottom);
+
+        grid.appendChild(card);
+
+    });
+
+}
+
+
+/* =====================================
+   OPEN PDF
+===================================== */
+
+function openCourse(id){
+
+    const course = courses.find(item => item.id === id);
+
+    if(!course) return;
+
+    if(Number(course.price) > 0){
+
+        alert(
+            "This course is locked.\n\n" +
+            "Payment verification has not been connected yet.\n" +
+            "The course cannot be unlocked using a screenshot or " +
+            "a simple return from a payment app."
+        );
+
+        return;
+    }
+
+    if(!course.fileData){
+
+        alert(
+            "This is a sample course card.\n" +
+            "The admin needs to upload its PDF file first."
+        );
+
+        return;
+    }
+
+    const newWindow = window.open();
+
+    if(!newWindow){
+
+        alert("Please allow pop-ups to open the PDF.");
+
+        return;
+    }
+
+    newWindow.document.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>${escapeHTML(course.title)}</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>
+                body{
+                    margin:0;
+                    background:#06140f;
+                    color:white;
+                    font-family:Arial;
+                    text-align:center;
+                }
+                header{
+                    padding:15px;
+                    background:#0d2118;
+                }
+                iframe{
+                    width:100%;
+                    height:calc(100vh - 60px);
+                    border:0;
+                    background:white;
+                }
+            </style>
+        </head>
+        <body>
+            <header>${escapeHTML(course.title)}</header>
+            <iframe src="${course.fileData}"></iframe>
+        </body>
+        </html>
+    `);
+
+    newWindow.document.close();
+
+}
+
+
+function escapeHTML(value){
+
+    return String(value || "").replace(/[&<>"']/g,function(char){
+
+        return {
+            "&":"&amp;",
+            "<":"&lt;",
+            ">":"&gt;",
+            '"':"&quot;",
+            "'":"&#39;"
+        }[char];
+
+    });
+
+}
+
+
+/* =====================================
+   ADMIN PANEL
+===================================== */
 
 function openAdmin(){
-document.getElementById("adminModal").classList.add("show");
+
+    document.getElementById("adminModal").style.display = "block";
+
+    document.getElementById("adminLogin").style.display =
+        adminLoggedIn ? "none" : "block";
+
+    document.getElementById("adminDashboard").style.display =
+        adminLoggedIn ? "block" : "none";
+
+    if(adminLoggedIn){
+        renderAdminCourses();
+    }
+
 }
 
-function closeModal(id){
-document.getElementById(id).classList.remove("show");
+
+function closeAdmin(){
+
+    document.getElementById("adminModal").style.display = "none";
+
 }
+
 
 function loginAdmin(){
 
-if(document.getElementById("adminPin").value==="2580"){
+    const pin = document.getElementById("adminPin").value;
 
-admin=true;
+    if(pin === "2580"){
 
-document.getElementById("adminLogin").style.display="none";
-document.getElementById("adminPanel").style.display="block";
+        adminLoggedIn = true;
 
-renderAdmin();
+        document.getElementById("adminLogin").style.display = "none";
 
-}else{
+        document.getElementById("adminDashboard").style.display = "block";
 
-alert("Incorrect Admin PIN");
+        renderAdminCourses();
+
+    }else{
+
+        alert("Incorrect Admin PIN.");
+
+    }
 
 }
 
-}
 
 function logoutAdmin(){
 
-admin=false;
+    adminLoggedIn = false;
 
-document.getElementById("adminLogin").style.display="block";
-document.getElementById("adminPanel").style.display="none";
+    document.getElementById("adminPin").value = "";
 
-closeModal("adminModal");
+    document.getElementById("adminDashboard").style.display = "none";
 
-}
-
-function addCourse(){
-
-if(!admin)return;
-
-let name=document.getElementById("courseName").value.trim();
-let category=document.getElementById("courseCategory").value;
-let description=document.getElementById("courseDescription").value.trim();
-let price=Number(document.getElementById("coursePrice").value);
-let file=document.getElementById("coursePDF").files[0];
-
-if(!name || !file){
-alert("Enter course name and select PDF");
-return;
-}
-
-if(file.type!=="application/pdf" && !file.name.toLowerCase().endsWith(".pdf")){
-alert("Only PDF files are allowed");
-return;
-}
-
-if(price<0 || !Number.isFinite(price)){
-alert("Invalid price");
-return;
-}
-
-if(file.size>5*1024*1024){
-alert("PDF must be smaller than 5 MB");
-return;
-}
-
-let reader=new FileReader();
-
-reader.onload=function(){
-
-courses.push({
-id:Date.now(),
-name,
-category,
-description,
-price,
-pdf:reader.result
-});
-
-save();
-render();
-renderAdmin();
-
-document.getElementById("courseName").value="";
-document.getElementById("courseDescription").value="";
-document.getElementById("coursePrice").value="";
-document.getElementById("coursePDF").value="";
-
-alert("Course added successfully");
-
-};
-
-reader.readAsDataURL(file);
+    document.getElementById("adminLogin").style.display = "block";
 
 }
 
-function render(){
 
-let grid=document.getElementById("courseGrid");
+async function addCourse(){
 
-let list=courses.filter(c=>
-activeCategory==="All" || c.category===activeCategory
-);
+    if(!adminLoggedIn){
+        alert("Please login first.");
+        return;
+    }
 
-if(!list.length){
+    const title = document.getElementById("courseName").value.trim();
 
-grid.innerHTML="<p>No courses available yet.</p>";
-return;
+    const platform = document.getElementById("coursePlatform").value;
 
-}
+    const description =
+        document.getElementById("courseDescription").value.trim();
 
-grid.innerHTML=list.map(c=>`
+    const price = Number(document.getElementById("coursePrice").value);
 
-<div class="card">
+    const fileInput = document.getElementById("courseFile");
 
-<span class="category">${c.category}</span>
+    const file = fileInput.files[0];
 
-<h3>${escapeHTML(c.name)}</h3>
+    if(!title){
+        alert("Please enter a course title.");
+        return;
+    }
 
-<p>${escapeHTML(c.description || "Premium learning guide")}</p>
+    if(!Number.isFinite(price) || price < 0){
+        alert("Please enter a valid price.");
+        return;
+    }
 
-<div class="price">
-${Number(c.price)===0?"FREE":"₹"+Number(c.price)}
-</div>
+    if(!file){
+        alert("Please select a PDF file.");
+        return;
+    }
 
-${Number(c.price)===0
-?`<button class="primary" onclick="openPDF(${c.id})">READ PDF</button>`
-:`<button class="secondary" onclick="showPayment(${c.id})">🔒 PAY NOW</button>`
-}
+    if(file.type !== "application/pdf"){
+        alert("Only PDF files are allowed.");
+        return;
+    }
 
-</div>
+    if(file.size > 5 * 1024 * 1024){
+        alert("PDF file must be smaller than 5 MB.");
+        return;
+    }
 
-`).join("");
+    const fileData = await readFile(file);
 
-}
+    const course = {
+        id:"course_" + Date.now(),
+        title:title,
+        platform:platform,
+        description:description,
+        price:price,
+        fileData:fileData,
+        fileName:file.name,
+        demo:false
+    };
 
-function escapeHTML(value){
-return String(value).replace(/[&<>"']/g,c=>({
-"&":"&amp;",
-"<":"&lt;",
-">":"&gt;",
-'"':"&quot;",
-"'":"&#39;"
-}[c]));
-}
+    courses.unshift(course);
 
-function openPDF(id){
+    saveCourses();
 
-let c=courses.find(x=>x.id===id);
+    document.getElementById("courseName").value = "";
+    document.getElementById("courseDescription").value = "";
+    document.getElementById("coursePrice").value = "0";
+    document.getElementById("courseFile").value = "";
 
-if(!c)return;
+    renderAdminCourses();
+    renderCourses();
 
-let win=window.open();
-
-if(!win){
-alert("Allow popups to view PDF");
-return;
-}
-
-win.document.write(`
-<iframe src="${c.pdf}" style="width:100%;height:100%;border:0"></iframe>
-`);
-
-}
-
-function showPayment(id){
-
-let c=courses.find(x=>x.id===id);
-
-if(!c)return;
-
-document.getElementById("paymentCourse").innerText=c.name;
-
-document.getElementById("paymentPrice").innerText="₹"+c.price;
-
-document.getElementById("paymentModal").classList.add("show");
+    alert("PDF course added successfully.");
 
 }
 
-function filterCourses(category,button){
 
-activeCategory=category;
+function readFile(file){
 
-document.querySelectorAll(".filter").forEach(b=>b.classList.remove("active"));
+    return new Promise((resolve,reject) => {
 
-button.classList.add("active");
+        const reader = new FileReader();
 
-render();
+        reader.onload = () => resolve(reader.result);
+
+        reader.onerror = reject;
+
+        reader.readAsDataURL(file);
+
+    });
+
+}
+
+
+/* =====================================
+   ADMIN COURSE MANAGEMENT
+===================================== */
+
+function renderAdminCourses(){
+
+    const list = document.getElementById("adminCourseList");
+
+    list.innerHTML = "";
+
+    if(courses.length === 0){
+
+        list.innerHTML = "<p>No courses added yet.</p>";
+
+        return;
+    }
+
+    courses.forEach(course => {
+
+        const item = document.createElement("div");
+
+        item.className = "admin-item";
+
+        const info = document.createElement("div");
+
+        const title = document.createElement("strong");
+        title.textContent = course.title;
+
+        const details = document.createElement("br");
+
+        const small = document.createElement("small");
+
+        small.textContent =
+            platformName(course.platform) +
+            " • " +
+            (Number(course.price) === 0 ? "Free" : "₹" + course.price);
+
+        info.appendChild(title);
+        info.appendChild(details);
+        info.appendChild(small);
+
+        const deleteButton = document.createElement("button");
+
+        deleteButton.className = "danger-btn";
+        deleteButton.textContent = "Delete";
+
+        deleteButton.onclick = () => deleteCourse(course.id);
+
+        item.appendChild(info);
+        item.appendChild(deleteButton);
+
+        list.appendChild(item);
+
+    });
 
 }
 
-function renderAdmin(){
-
-let box=document.getElementById("adminCourses");
-
-box.innerHTML=courses.map(c=>`
-
-<div class="admin-item">
-
-<span>${escapeHTML(c.name)}</span>
-
-<button onclick="deleteCourse(${c.id})"
-style="background:#762c2c;color:white;padding:8px">
-DELETE
-</button>
-
-</div>
-
-`).join("");
-
-}
 
 function deleteCourse(id){
 
-if(!confirm("Delete this course?"))return;
+    const confirmDelete = confirm(
+        "Are you sure you want to delete this course?"
+    );
 
-courses=courses.filter(c=>c.id!==id);
+    if(!confirmDelete) return;
 
-save();
-render();
-renderAdmin();
+    courses = courses.filter(course => course.id !== id);
+
+    saveCourses();
+
+    renderAdminCourses();
+    renderCourses();
 
 }
 
-render();
+
+/* =====================================
+   START APP
+===================================== */
+
+loadCourses();
+
+renderCourses();
+
+
+/* Close modal by clicking outside */
+
+document.getElementById("adminModal").addEventListener(
+    "click",
+    function(event){
+
+        if(event.target === this){
+            closeAdmin();
+        }
+
+    }
+);
 
 </script>
 
 </body>
-</html>
+  </html>
